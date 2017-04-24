@@ -1,0 +1,21 @@
+{
+  "name": "yucibotsite",
+  "version": "1.0.0",
+  "description": "Informative website about Yucibot",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mstiekema/YucibotSite.git"
+  },
+  "keywords": [
+    "Twitch"
+  ],
+  "author": "Mstiekema",
+  "bugs": {
+    "url": "https://github.com/Mstiekema/YucibotSite/issues"
+  },
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0"
+  }
+}
