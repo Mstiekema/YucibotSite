@@ -1,5 +1,5 @@
 /*
-The CSS is partly from a purecss.io template called "Landing Page", but I changed up a few things
+The CSS is partly from a purecss.io template called "Landing Page", but I changed the file a lot
 */
 
 img {
@@ -70,14 +70,20 @@ img {
   height: 400px;
   width: 400px;
   margin: 20px;
+  padding: 20px;
   background-color: #ffffff;
   text-align: center;
-  display: inline-block;
+  display: inline-table;
 }
 
-a:hover, a:focus {
+#gButton:hover, #gButton:focus {
   text-decoration: none;
   color: #f1f1f1;
+}
+
+#about {
+  padding: 20px;
+  padding-top: 0px;
 }
 
 .featureButton {

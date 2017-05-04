@@ -4,23 +4,43 @@
   <div class="splash">
     <h1 class="splash-head">Yucibot</h1>
     <p class="splash-subhead">A multipurpose Twitch chatbot written in Node.js</p>
-    <p><a href="https://www.github.com/Mstiekema/Yucibot" target="_blank" class="pure-button splashButton">Github</a></p>
+    <p><a href="https://www.github.com/Mstiekema/Yucibot" id="gButton" target="_blank" class="pure-button splashButton">Github</a></p>
   </div>
 </div>
 
 <div class="container-fluid content-wrapper">
   <div class="content">
-    <h2 class="content-head center">What is Yucibot?</h2>
     <div class="pure-g">
       <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
         <div class="row text-center">
-          <div class="featureList"><h3>Point system</h3></div>
-          <div class="featureList"><h3>Stat tracking</h3></div>
-          <div class="featureList"><h3>Moderation tools</h3></div>
-          <div class="featureList"><h3>Songrequest</h3></div>
-          <div class="featureList"><h3>Custom commands</h3></div>
-          <div class="featureList"><h3>Chat logger</h3></div>
-          <div class="featureList"><h3>Polling system</h3></div>
+          <div id="about">
+            <h2 class="content-head center">What is Yucibot?</h2>
+            <p>Yucibot is designed to be a multipurpose chatbot that every streamer can use. It should help the streamer and the viewer to create a better and more pleasant experience during the stream. The bot gets updated pretty frequently, so you can always look forward to new features.</p>
+          </div>
+          <div id="features">
+            <h2 class="content-head center">Yucibot features</h2>
+            <div class="featureList"><h3>Point system</h3>
+              Viewers can earn points by watching the stream. By default you earn 5 points every 5 minutes. With these points users can buy commands and gamble to earn more. You can gamble by using the roulette & slot command. Another way to earn points is to participate in the dungeon event. By earning points you can also climb the leaderboards and show up in the top 5 on the stats page.
+            </div>
+            <div class="featureList"><h3>Stat tracking</h3>
+              Everything you do in chat is recorded by the bot. It keeps track of your lines typed, points and much more. One of the special features is that the bot can track the emote usage of your chat. With this you can see on the website how many times a certain emote is used.
+            </div>
+            <div class="featureList"><h3>Moderation tools</h3>
+              Twitch chatbots always come with some mod tools. The bot currently is able to detect links in chat. You can also filter words in the bot. The filter will find any word in a messages and punishes the user by a purge, time-out or ban.
+            </div>
+            <div class="featureList"><h3>Songrequest</h3>
+              Every user can request songs in the chat if you enable the songrequest module. By default only subs are able to request songs, but this can be changed in the settings. You can also change the max length of a song or the max amount of songs in the queue. If a song exceeds the max length, you are still able to request is, but it will get skipped at the max timestamp.
+            </div>
+            <div class="featureList"><h3>Custom commands</h3>
+              You can add your own commands in the bot. You can customize the settings of your command so it can cost money or have an extended cooldown. More settings for the custom commands will come in the future.
+            </div>
+            <div class="featureList"><h3>Chat logger</h3>
+              Every message that someones types in the chat will be logged and stored into the database. You can retrieve a users log by going to their profile page on the website. Selecting a certain date will retrieve the logs for that day. You are also able to retrieve the entire user log, but this is not recommended.
+            </div>
+            <div class="featureList"><h3>Polling system</h3>
+              Ever wanted to make your own polls within your chatbot? That's possible with Yucibot! You can create and manage polls in the admin section. Voting is IP based, so voting multiple times ins't possible.
+            </div>
+          </div>
         </div>
       </div>
     </div>
