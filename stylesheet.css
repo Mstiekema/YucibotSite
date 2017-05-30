@@ -68,7 +68,7 @@ img {
 
 .featureList {
   height: 400px;
-  width: 400px;
+  max-width: 400px;
   margin: 20px;
   padding: 20px;
   background-color: #ffffff;
@@ -84,6 +84,10 @@ img {
 #about {
   padding: 20px;
   padding-top: 0px;
+}
+
+#bots > a {
+  color: #7f8c8d;
 }
 
 .featureButton {
@@ -108,6 +112,17 @@ img {
 .content {
   width: 100%;
   padding: 1em 1em 3em;
+}
+
+.main {
+  background-color: #ffffff;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 60px;
+  bottom: -200px;
+  padding: 20px;
+  padding-top: 0px;
 }
 
 .content-head {
@@ -144,10 +159,18 @@ body {
   .l-box-lrg {
     border: none;
   }
+  #about {
+    margin-left: 200px; 
+    margin-right: 200px;
+  }
 }
 
 @media (min-width: 78em) {
   .splash-head {
     font-size: 300%;
+  }
+  #about {
+    margin-left: 100px; 
+    margin-right: 100px;
   }
 }

@@ -1,4 +1,38 @@
-<% include ../static/header.ejs %>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Website about the Twitch chatbot, Yucibot.">
+<title>Yucibot</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+<script>
+window.addEventListener("hashchange", function (x) {
+    if (x.newURL.split("#")[1] == "bots") return
+    window.scrollTo(window.scrollX, window.scrollY - 100);
+});
+</script>
+<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="./stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <a class="pure-menu-heading">Yucibot</a>
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+    <li class="pure-menu-item"><a href="#about" class="pure-menu-link">About</a></li>
+    <li class="pure-menu-item"><a href="#features" class="pure-menu-link">Features</a></li>
+    <li class="pure-menu-item"><a href="#bots" class="pure-menu-link">Bots</a></li>
+  </ul>
+</div>
+</div>
+
 <div class="splash-container">
   <img src="https://images2.alphacoders.com/698/thumb-1920-698137.jpg">
   <div class="splash">
@@ -13,10 +47,14 @@
     <div class="pure-g">
       <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
         <div class="row text-center">
+          
           <div id="about">
             <h2 class="content-head center">What is Yucibot?</h2>
-            <p>Yucibot is designed to be a multipurpose chatbot that every streamer can use. It should help the streamer and the viewer to create a better and more pleasant experience during the stream. The bot gets updated pretty frequently, so you can always look forward to new features.</p>
+            <p>Yucibot is designed to be a multipurpose chatbot that every streamer can use. It should help the streamer and the viewer to create a better and more pleasant experience during the stream. A streamer should only have one bot, so this bot has everything you need. So stop using your Nighbot, Moobot or Ankhbot and start using Yucibot! <br>
+            I originally started working on this bot as a fun learning project, but it turned out to be a pretty good success. I now try to target a bigger audience by including more and more features that everyone can use. Suggestions for new features are always welcome, so don't hesitate to give them.<br>
+            The bot gets frequent updates, so you can always look forward to new features.</p>
           </div>
+          
           <div id="features">
             <h2 class="content-head center">Yucibot features</h2>
             <div class="featureList"><h3>Point system</h3>
@@ -40,12 +78,56 @@
             <div class="featureList"><h3>Polling system</h3>
               Ever wanted to make your own polls within your chatbot? That's possible with Yucibot! You can create and manage polls in the admin section. Voting is IP based, so voting multiple times ins't possible.
             </div>
+            <br><button type="button" class="center featureButton btn btn-primary btn-lg" id="fullFeatures">Full feature list</button>
+            <script>
+              document.getElementById("fullFeatures").addEventListener("click", function() {
+                BootstrapDialog.show({
+                  title: 'All features',
+                  size: BootstrapDialog.SIZE_LARGE,
+                  message: '<b>Point games</b> \
+                        <br>- Roulette \
+                        <br>- Slot machine \
+                        <br>- Dungeon (WIP) \
+                      <br><br><b>Fun features </b> \
+                        <br>- Songrequest \
+                        <br>- Google a question \
+                        <br>- CLR interaction \
+                        <br>- Check Overwatch stats \
+                        <br>- Special timers & events \
+                      <br><br><b>Moderation tools </b> \
+                        <br>- Word filter \
+                        <br>- Link filter \
+                        <br>- Custom commands \
+                        <br>- Host polls on website \
+                      <br><br><b>Profile related</b> \
+                        <br>- Emote tracking \
+                        <br>- Chat logger \
+                        <br>- Point System \
+                        <br>- Profile information commands\
+                        <br>- Profile info on website\
+                      <br><br>And more to come... \
+                    </p>',
+                  buttons: [{
+                    label: 'Close',
+                    action: function(dialog) {
+                      dialog.close();
+                    }
+                  }]
+                });
+              })
+            </script>
+          </div>
+          
+          <div id="bots">
+            <h2 class="content-head center">Live examples</h2>
+            These are some of the bots I'm currently running myself. <br><br>
+            <a target="_blank" href="http://midnan.yucibot.nl"><b>Midnanbot</b></a> - Stream is: <%= midnanStat %> with <%= midnanView %> viewers <br>
+            <a target="_blank" href="http://pixel.yucibot.nl"><b>Pixelbot</b></a> - Stream is: <%= dionStat %> with <%= dionView %> viewers <br>
+            <a target="_blank" href="http://dion.yucibot.nl"><b>InsaneDionBot</b></a> - Stream is: <%= pixelStat %> with <%= pixelView %> viewers <br>
           </div>
         </div>
       </div>
     </div>
-    <h2 class="content-head center">And much more...<br><br>
-    <a href="/features"><button type="button" class="featureButton btn btn-primary btn-lg">Full feature list</button></a></h2>
   </div>
 </div>
 </body>
